@@ -18,7 +18,7 @@ class CheckAccessTokenMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $token = $request->get('token');
+        $token = $request->get('access_token');
 
         if (!$token) {
             throw new AuthorizationException("Access Token is needed to proceed to this API!");
