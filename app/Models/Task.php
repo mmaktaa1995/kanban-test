@@ -31,7 +31,15 @@ class Task extends Model
     public function scopeDate($query, $filters)
     {
         return $query->when($filters['creation_date'], function ($query) use ($filters) {
-                $query->whereDate('created_at', $filters['creation_date']);
+            $query->whereDate('created_at', $filters['creation_date']);
+        });
+    }
+
+    public function scopeBoard($query, $filters)
+    {
+        return $query->when($filters['board'], function ($query) use ($filters) {
+            $query->leftJoin('columns', 'columns.id', 'tasks.column_id')
+                ->where('columns.board_id', $filters['board']);
         });
     }
 }

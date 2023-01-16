@@ -49,7 +49,7 @@ class BoardController extends Controller
      */
     public function show(Board $board)
     {
-        $board->load('columns');
+        $board->load('columns.tasks');
         return response()->json(BoardResource::make($board));
     }
 }

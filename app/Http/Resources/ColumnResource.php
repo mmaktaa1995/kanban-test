@@ -17,6 +17,7 @@ class ColumnResource extends JsonResource
         return [
             'id' => $this->id,
             'title'=> $this->title,
+            'board_id'=> $this->board_id,
             'tasks' => TaskResource::collection($this->whenLoaded('tasks'))
         ];
     }

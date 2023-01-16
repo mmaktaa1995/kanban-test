@@ -3,6 +3,7 @@
 use App\Http\Controllers\{BoardController,
     ColumnController,
     ExposedAPI\TaskController as ExposedTaskController,
+    MainController,
     TaskController};
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,8 @@ Route::get('/list-cards', [ExposedTaskController::class, 'index'])
 Route::resource('boards', BoardController::class)->only(['index', 'store', 'show']);
 Route::resource('columns', ColumnController::class)->except(['edit', 'create', 'show']);
 Route::resource('tasks', TaskController::class)->except(['edit', 'create', 'show']);
+Route::post('tasks/{task}/{column}', [TaskController::class, 'updateColumn'])->name('tasks.update_column');
+Route::post('export-db', [MainController::class, 'exportDB'])->name(
+    'export_db'
+);
 

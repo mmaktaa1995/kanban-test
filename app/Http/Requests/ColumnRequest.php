@@ -13,7 +13,7 @@ class ColumnRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,6 +25,7 @@ class ColumnRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
+            'board_id' => ['required', 'numeric', 'exists:boards,id']
         ];
     }
 }

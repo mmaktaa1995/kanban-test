@@ -12,7 +12,7 @@ class TaskRepository implements TaskRepositoryInterface
 
     public function all($filters)
     {
-        return Task::with('tasks')->status($filters)->date($filters)->get();
+        return Task::with('tasks')->status($filters)->date($filters)->board($filters)->get();
     }
 
     public function create(array $data)

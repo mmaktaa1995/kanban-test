@@ -35,9 +35,9 @@ class TaskController extends Controller
      */
     public function store(TaskRequest $request)
     {
-        $this->taskRepository->create($request->validated());
+        $task = $this->taskRepository->create($request->validated());
 
-        return response()->json(['message' => 'Task Added Successfully!']);
+        return response()->json(['message' => 'Task Added Successfully!', 'task' => $task]);
     }
 
     /**
