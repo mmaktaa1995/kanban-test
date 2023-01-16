@@ -59,7 +59,7 @@ export default {
 .alert {
     display: flex;
     align-items: center;
-    padding: 0.55rem 0.65rem 0.55rem 0.75rem;
+    padding: 0.55rem 0.85rem 0.55rem 0.75rem;
     border-radius: .5rem;
     justify-content: space-between;
     margin-bottom: 2rem;
@@ -95,22 +95,22 @@ export default {
 }
 
 .alert-success {
-    background-color: rgba(62, 189, 97, 0.6);
+    background-color: rgba(62, 189, 97, 0.8);
     border: 2px solid #3EBD61;
 }
 
 .alert-info {
-    background-color: rgba(0, 108, 227, 0.6);
+    background-color: rgba(0, 108, 227, 0.8);
     border: 2px solid #006CE3;
 }
 
 .alert-warning {
-    background-color: rgba(239, 148, 0, 0.6);
+    background-color: rgba(239, 148, 0, 0.8);
     border: 2px solid #EF9400;
 }
 
 .alert-danger {
-    background-color: rgba(236, 77, 43, 0.6);
-    border: 2px solid #EF9400;
+    background-color: rgba(236, 77, 43, 0.8);
+    border: 2px solid #f56260;
 }
 </style>

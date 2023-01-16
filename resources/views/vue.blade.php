@@ -23,6 +23,7 @@
     <flash-message></flash-message>
     <kanban-board v-if="board && boardItem && boardItem.id" :board="boardItem"></kanban-board>
     <add-board></add-board>
+    <floating-button @click="exportDB">Export DB</floating-button>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 </body>
