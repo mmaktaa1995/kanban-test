@@ -165,6 +165,7 @@ export default {
         taskAdded(task) {
             const index = this.board.columns.findIndex(_ => _.id === this.selectedColumn.id);
             this.board.columns[index].tasks.push(task);
+            this.tasksState.push(task);
             this.selectedColumn = null;
         },
         taskUpdated(task) {
