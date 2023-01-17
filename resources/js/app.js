@@ -12,8 +12,10 @@ var app = new Vue({
     },
     mounted() {
         this.getBoards();
-        bus.$on('board-added', () => {
+        bus.$on('board-added', (id) => {
             this.getBoards();
+            this.board = id;
+            this.getBoardData();
         })
         bus.$on('column-added', () => {
             this.getBoardData();

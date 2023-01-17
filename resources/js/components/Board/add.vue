@@ -46,7 +46,7 @@ export default {
 
             axios.post(`/boards`, {...this.form}).then(({data}) => {
                 bus.$emit('flash-message', {text: data.message, type: 'success'});
-                bus.$emit('board-added');
+                bus.$emit('board-added', data.board.id);
                 this.hide();
             }).catch((error) => {
                 if (error.response && error.response.status === 422) {

@@ -35,9 +35,9 @@ class BoardController extends Controller
      */
     public function store(BoardRequest $request)
     {
-        $this->boardRepository->create($request->validated());
+        $board = $this->boardRepository->create($request->validated());
 
-        return response()->json(['message' => 'Board Added Successfully!']);
+        return response()->json(['message' => 'Board Added Successfully!', 'board' => $board]);
     }
 
     /**
